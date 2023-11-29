@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .scroll{
+            height: 150vh;
+        }
+
+        #dropdown-toggle {
+            cursor: pointer;
+        }
+
+        #dropdown {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            list-style: none;
+            padding: 0;
+        }
+
+        #dropdown li {
+            padding: 10px;
+            border-bottom: 1px solid #666;
+            list-style: none;
+            color: white;
+        }
+
+        #dropdown li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #dropdown li:last-child {
+            border-bottom: none;
+        }
+    </style>
+    <title>Dropdown Menu</title>
+</head>
+<body>
+    <div class="scroll">
+    <div id="navbar">
+        <div id="dropdown-toggle">Click me for Dropdown</div>
+        <ul id="dropdown">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <!-- Your webpage content goes here -->
+    </div>
+</div>
+    <script>
+
+            const dropdownToggle = document.getElementById("dropdown-toggle");
+            const dropdown = document.getElementById("dropdown");
+
+            dropdownToggle.addEventListener("click", function (e) {
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+            });
+
+            document.addEventListener("click", function (e) {
+                if (!dropdownToggle.contains(e.target) && !dropdown.contains(e.target)) {
+                    dropdown.style.display = "none";
+                }
+            });
+            window.addEventListener("scroll", function () {
+                dropdown.style.display = "none";
+            });
+
+    </script>
+</body>
+</html>

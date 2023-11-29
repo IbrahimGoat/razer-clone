@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Speech Balloon Sub-Menu</title>
+    <style>
+        /* Basic styling for the navigation bar */
+        .navbar {
+            background-color: #3498db;
+            padding: 10px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu-item {
+            margin-right: 20px;
+            position: relative;
+        }
+
+        /* Styling for the main menu items */
+        .menu-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Styling for the speech balloon sub-menu */
+        .sub-menu {
+            position: absolute;
+            display: none;
+            top: 3rem;
+            left: 0;
+        }
+
+        .sub-menu .speech-balloon {
+            background-color: #3498db;
+            color: #ffffff;
+            border-radius: 5px;
+            padding: 10px;
+            width: 200px;
+            position: relative;
+        }
+
+        /* Show the sub-menu on hover */
+        .menu-item:hover .sub-menu {
+            display: block;
+        }
+
+        /* Style for sub-menu list items */
+        .sub-menu-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sub-menu-list a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Speech balloon tail */
+        .speech-balloon::before {
+            content: "";
+            position: absolute;
+            top: -20px; /* Adjust the position */
+            left: 20px; /* Adjust the position */
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #3498db transparent;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="#">About</a>
+                <div class="sub-menu">
+                    <div class="speech-balloon">
+                        <ul class="sub-menu-list">
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Mission</a></li>
+                            <li><a href="#">Vision</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="menu-item">
+                <a href="#">Services</a>
+                <div class="sub-menu">
+                    <div class="speech-balloon">
+                        <ul class="sub-menu-list">
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Graphic Design</a></li>
+                            <li><a href="#">SEO</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="menu-item">
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

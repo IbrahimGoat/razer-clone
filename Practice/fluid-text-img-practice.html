@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Responsive Text Div</title>
+<style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.text-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2em; /* Relative to parent font-size */
+  max-width: 100%; /* Ensures it doesn't overflow on smaller screens */
+}
+
+.large-text {
+  font-size: 1.5em;
+  max-width: 100%;
+}
+
+.medium-text {
+  font-size: 1.2em;
+  max-width: 100%;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+/* For smaller screens */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  .large-text {
+    font-size: 1.3em;
+  }
+  .medium-text {
+    font-size: 1.1em;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="text-container">
+    <h1>Main Heading</h1>
+    <p class="large-text">Large text below the heading.</p>
+    <p class="medium-text">Medium-sized text with additional information.</p>
+    <div class="links">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+    </div>
+  </div>
+</body>
+</html>

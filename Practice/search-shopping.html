@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Icon to Cross Icon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .search-icon {
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .search-container.expanded .search-icon {
+            transform: rotate(1deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <i class="fas fa-search search-icon" id="searchIcon"></i>
+    </div>
+
+    <script>
+        const searchIcon = document.getElementById('searchIcon');
+        const searchContainer = document.querySelector('.search-container');
+
+        searchContainer.addEventListener('click', () => {
+            searchContainer.classList.toggle('expanded');
+            if (searchContainer.classList.contains('expanded')) {
+                searchIcon.classList.remove('fa-search');
+                searchIcon.classList.add('fa-times');
+            } else {
+                searchIcon.classList.remove('fa-times');
+                searchIcon.classList.add('fa-search');
+            }
+        });
+    </script>
+</body>
+</html>
